@@ -1,4 +1,6 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
+    let calendarEl = document.getElementById('calendar');
+
     $.getJSON('reservations.json', function(data) {
         let events = data.map(reservation => {
             return {
@@ -10,12 +12,14 @@ $(document).ready(function() {
             };
         });
 
-        $('#calendar').fullCalendar({
+        let calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             events: events,
             eventClick: function(info) {
                 alert('Reservation: ' + info.event.title + '\n\n' + info.event.description);
             }
         });
+
+        calendar.render();
     });
 });

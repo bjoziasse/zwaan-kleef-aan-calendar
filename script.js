@@ -2,13 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let calendarEl = document.getElementById('calendar');
 
     $.getJSON('reservations.json', function(data) {
+        console.log("Fetched data:", data);  // Log fetched data
+
         let events = data.map(reservation => {
             return {
                 title: reservation.title,
                 start: reservation.date,
                 description: reservation.description,
                 textColor: 'white',
-                color: '#007aff' // iCalendar color
+                color: '#007aff'
             };
         });
 
@@ -21,5 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         calendar.render();
+    }).fail(function() {
+        console.error("Error fetching data from reservations.json");
     });
 });

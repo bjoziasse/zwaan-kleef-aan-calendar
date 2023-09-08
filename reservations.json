@@ -1,0 +1,13 @@
+[
+    {
+        "date": "2023-09-10",
+        "title": "Reservation 1",
+        "description": "Description for reservation 1."
+    },
+    {
+        "date": "2023-09-15",
+        "title": "Reservation 2",
+        "description": "Description for reservation 2."
+    }
+    // ... add more reservations as needed
+]

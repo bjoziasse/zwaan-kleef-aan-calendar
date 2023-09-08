@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             events: events,
             eventClick: function(info) {
                 document.getElementById('modalTitle').textContent = info.event.title;
-                document.getElementById('modalDescription').textContent = info.event.description;
+                document.getElementById('modalDescription').textContent = info.event.extendedProps.description;
                 var modal = document.getElementById("myModal");
                 var span = document.getElementsByClassName("close")[0];
                 
